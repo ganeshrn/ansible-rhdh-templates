@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ansible-rhdh-templates
+  annotations:
+    github.com/project-slug: ansible/ansible-rhdh-templates
+spec:
+  type: other
+  lifecycle: unknown
+  owner: test-rhaap-1/test-team-1
