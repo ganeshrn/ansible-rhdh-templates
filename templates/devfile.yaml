@@ -18,8 +18,6 @@ spec:
         - repoOwner
         - repoName
         - owner
-        - collectionGroup
-        - collectionName
       properties:
         sourceControl:
           title: Select source control option
@@ -36,30 +34,16 @@ spec:
           description: The organization name or username of your source code repository. For example, “my-github-username”.
           maxLength: 100
         repoName:
-          title: Playbook repository name
-          description: The name of the new playbook project repository. For example, “my-new-playbook-repo”.
+          title: Devfile repository name
+          description: The name of the new devfie project repository. For example, “my-new-devfile-repo”.
           type: string
           maxLength: 100
           pattern: '^([a-zA-Z][a-zA-Z0-9_]*)(-[a-zA-Z0-9_]+)*$'
         description:
-          title: Playbook description
+          title: Devfile description
           type: string
           description: Describe the playbook and its purpose to help other users understand what to use it for.
           maxLength: 350
-        collectionGroup:
-          title: Collection Namespace
-          description: The collection namespace in your repository. For example, “my_new_collection_namespace”.
-          type: string
-          maxLength: 63
-          minLength: 2
-          pattern: '^[a-z][a-z0-9_]+$'
-        collectionName:
-          title: Collection Name
-          description: The collection name in your new playbook repository. For example, “my_new_collection_name”.
-          type: string
-          maxLength: 63
-          minLength: 2
-          pattern: '^[a-z][a-z0-9_]+$'
         owner:
           title: Catalog Owner name
           type: string
