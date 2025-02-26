@@ -71,8 +71,6 @@ spec:
         repoOwner: '${{ parameters.repoOwner }}'
         repoName: '${{ parameters.repoName }}'
         description: '${{ parameters.description }}'
-        collectionGroup: '${{ parameters.collectionGroup }}'
-        collectionName: '${{ parameters.collectionName }}'
         applicationType: collection-project
         sourceControl: '${{ parameters.sourceControl }}'
 
@@ -87,8 +85,6 @@ spec:
           system: ${{ parameters.system }}
           applicationType: collection-project
           description: ${{ parameters.description }}
-          collectionGroup: ${{ parameters.collectionGroup }}
-          collectionName: ${{ parameters.collectionName }}
           sourceControl: ${{ parameters.sourceControl }}
           devSpacesBaseUrl: ${{ steps.ansible.output.devSpacesBaseUrl }}
 
