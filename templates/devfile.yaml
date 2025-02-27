@@ -71,7 +71,7 @@ spec:
         repoOwner: '${{ parameters.repoOwner }}'
         repoName: '${{ parameters.repoName }}'
         description: '${{ parameters.description }}'
-        applicationType: collection-project
+        applicationType: devfile-project
         sourceControl: '${{ parameters.sourceControl }}'
 
     - id: catalogTemplate
@@ -83,7 +83,7 @@ spec:
           repoUrl: ${{ steps.ansible.output.repoUrl }}
           owner: ${{ parameters.owner }}
           system: ${{ parameters.system }}
-          applicationType: collection-project
+          applicationType: devfile-project
           description: ${{ parameters.description }}
           sourceControl: ${{ parameters.sourceControl }}
           devSpacesBaseUrl: ${{ steps.ansible.output.devSpacesBaseUrl }}
