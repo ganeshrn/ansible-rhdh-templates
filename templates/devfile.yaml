@@ -38,7 +38,7 @@ spec:
         #  type: string
         #  maxLength: 100
         #  pattern: '^([a-zA-Z][a-zA-Z0-9_]*)(-[a-zA-Z0-9_]+)*$'
-        repoUrl:
+        repositoryUrl:
           title: Source code repository URL
           type: string
           description: The repository URL where the devfile needs to be scaffolded.
