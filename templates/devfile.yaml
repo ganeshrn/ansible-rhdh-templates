@@ -15,8 +15,7 @@ spec:
   parameters:
     - title: Provide information about the new component
       required:
-        - repoOwner
-        - repoName
+        - repoUrl
         - owner
       properties:
         sourceControl:
@@ -28,17 +27,22 @@ spec:
             - github.com
           enumNames:
             - 'GitHub'
-        repoOwner:
-          title: Source code repository organization name or username
+        #repoOwner:
+        #  title: Source code repository organization name or username
+        #  type: string
+        #  description: The organization name or username of your source code repository. For example, “my-github-username”.
+        #  maxLength: 100
+        #repoName:
+        #  title: Collection repository name
+        #  description: The name of the collection repository where the devfile will be added. For example, “my-new-devfile-collection-repo”.
+        #  type: string
+        #  maxLength: 100
+        #  pattern: '^([a-zA-Z][a-zA-Z0-9_]*)(-[a-zA-Z0-9_]+)*$'
+        repoUrl:
+          title: Source code repository URL
           type: string
-          description: The organization name or username of your source code repository. For example, “my-github-username”.
-          maxLength: 100
-        repoName:
-          title: Collection repository name
-          description: The name of the collection repository where the devfile will be added. For example, “my-new-devfile-collection-repo”.
-          type: string
-          maxLength: 100
-          pattern: '^([a-zA-Z][a-zA-Z0-9_]*)(-[a-zA-Z0-9_]+)*$'
+          description: The repository URL where the devfile needs to be scaffolded.
+          maxLength: 150
         description:
           title: Devfile description
           type: string
