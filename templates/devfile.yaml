@@ -72,8 +72,7 @@ spec:
       name: Generating the Ansible Source Code Component
       action: ansible:content:create
       input:
-        repoOwner: '${{ parameters.repoOwner }}'
-        repoName: '${{ parameters.repoName }}'
+        repositoryUrl: '${{ parameters.repositoryUrl }}'
         description: '${{ parameters.description }}'
         applicationType: devfile-project
         sourceControl: '${{ parameters.sourceControl }}'
