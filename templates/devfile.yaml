@@ -15,7 +15,7 @@ spec:
   parameters:
     - title: Provide information about the new component
       required:
-        - repoUrl
+        - repositoryUrl
         - owner
       properties:
         sourceControl:
