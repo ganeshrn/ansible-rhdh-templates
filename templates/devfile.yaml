@@ -77,19 +77,19 @@ spec:
         applicationType: devfile-project
         sourceControl: '${{ parameters.sourceControl }}'
 
-    - id: catalogTemplate
-      name: Generating the Catalog Info Component
-      action: fetch:template
-      input:
-        url: ../catalog-info/
-        values:
-          repoUrl: ${{ steps.ansible.output.repoUrl }}
-          owner: ${{ parameters.owner }}
-          system: ${{ parameters.system }}
-          applicationType: devfile-project
-          description: ${{ parameters.description }}
-          sourceControl: ${{ parameters.sourceControl }}
-          devSpacesBaseUrl: ${{ steps.ansible.output.devSpacesBaseUrl }}
+    # - id: catalogTemplate
+    #   name: Generating the Catalog Info Component
+    #   action: fetch:template
+    #   input:
+    #     url: ../catalog-info/
+    #     values:
+    #       repoUrl: ${{ steps.ansible.output.repoUrl }}
+    #       owner: ${{ parameters.owner }}
+    #       system: ${{ parameters.system }}
+    #       applicationType: devfile-project
+    #       description: ${{ parameters.description }}
+    #       sourceControl: ${{ parameters.sourceControl }}
+    #       devSpacesBaseUrl: ${{ steps.ansible.output.devSpacesBaseUrl }}
 
     - id: publish
       name: Publish
