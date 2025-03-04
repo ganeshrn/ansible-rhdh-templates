@@ -91,16 +91,16 @@ spec:
     #       sourceControl: ${{ parameters.sourceControl }}
     #       devSpacesBaseUrl: ${{ steps.ansible.output.devSpacesBaseUrl }}
 
-    - id: publish
-      name: Publish
-      action: publish:github
-      input:
-        allowedHosts:
-          - ${{ parameters.sourceControl }}
-        description: ${{ parameters.description }}
-        repoUrl: ${{ steps.ansible.output.repoUrl }}
-        repoVisibility: 'public'
-        defaultBranch: main
+    # - id: publish
+    #   name: Publish
+    #   action: publish:github
+    #   input:
+    #     allowedHosts:
+    #       - ${{ parameters.sourceControl }}
+    #     description: ${{ parameters.description }}
+    #     repoUrl: ${{ steps.ansible.output.repoUrl }}
+    #     repoVisibility: 'public'
+    #     defaultBranch: main
 
     #- id: register
     #  name: Register
