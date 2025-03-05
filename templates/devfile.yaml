@@ -48,25 +48,25 @@ spec:
           type: string
           description: Describe the devfile and its purpose to help other users understand what to use it for.
           maxLength: 350
-        owner:
-          title: Catalog Owner name
-          type: string
-          description: The Red Hat Developer Hub catalog item owner. This will appear on the “My items” tab. For example, “my-devhub-username”.
-          ui:field: EntityPicker
-          ui:options:
-            catalogFilter:
-              kind:
-                - Group
-                - User
-        system:
-          title: System
-          type: string
-          description: The Red Hat Developer Hub system catalog item name. This will appear on the “My items” tab. For example, “my-devhub-system”.
-          ui:field: EntityPicker
-          ui:options:
-            catalogFilter:
-              kind:
-                - System
+        # owner:
+        #   title: Catalog Owner name
+        #   type: string
+        #   description: The Red Hat Developer Hub catalog item owner. This will appear on the “My items” tab. For example, “my-devhub-username”.
+        #   ui:field: EntityPicker
+        #   ui:options:
+        #     catalogFilter:
+        #       kind:
+        #         - Group
+        #         - User
+        # system:
+        #   title: System
+        #   type: string
+        #   description: The Red Hat Developer Hub system catalog item name. This will appear on the “My items” tab. For example, “my-devhub-system”.
+        #   ui:field: EntityPicker
+        #   ui:options:
+        #     catalogFilter:
+        #       kind:
+        #         - System
   steps:
     - id: ansible
       name: Generating the Ansible Source Code Component
