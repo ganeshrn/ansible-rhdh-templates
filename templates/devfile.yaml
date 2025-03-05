@@ -26,17 +26,6 @@ spec:
             - github.com
           enumNames:
             - 'GitHub'
-        #repoOwner:
-        #  title: Source code repository organization name or username
-        #  type: string
-        #  description: The organization name or username of your source code repository. For example, “my-github-username”.
-        #  maxLength: 100
-        #repoName:
-        #  title: Collection repository name
-        #  description: The name of the collection repository where the devfile will be added. For example, “my-new-devfile-collection-repo”.
-        #  type: string
-        #  maxLength: 100
-        #  pattern: '^([a-zA-Z][a-zA-Z0-9_]*)(-[a-zA-Z0-9_]+)*$'
         repositoryUrl:
           title: Source code repository URL
           type: string
@@ -47,25 +36,6 @@ spec:
           type: string
           description: Describe the devfile and its purpose to help other users understand what to use it for.
           maxLength: 350
-        # owner:
-        #   title: Catalog Owner name
-        #   type: string
-        #   description: The Red Hat Developer Hub catalog item owner. This will appear on the “My items” tab. For example, “my-devhub-username”.
-        #   ui:field: EntityPicker
-        #   ui:options:
-        #     catalogFilter:
-        #       kind:
-        #         - Group
-        #         - User
-        # system:
-        #   title: System
-        #   type: string
-        #   description: The Red Hat Developer Hub system catalog item name. This will appear on the “My items” tab. For example, “my-devhub-system”.
-        #   ui:field: EntityPicker
-        #   ui:options:
-        #     catalogFilter:
-        #       kind:
-        #         - System
   steps:
     - id: ansible
       name: Generating the Ansible Source Code Component
@@ -75,44 +45,3 @@ spec:
         description: '${{ parameters.description }}'
         applicationType: devfile-project
         sourceControl: '${{ parameters.sourceControl }}'
-
-    # - id: catalogTemplate
-    #   name: Generating the Catalog Info Component
-    #   action: fetch:template
-    #   input:
-    #     url: ../catalog-info/
-    #     values:
-    #       repoUrl: ${{ steps.ansible.output.repoUrl }}
-    #       owner: ${{ parameters.owner }}
-    #       system: ${{ parameters.system }}
-    #       applicationType: devfile-project
-    #       description: ${{ parameters.description }}
-    #       sourceControl: ${{ parameters.sourceControl }}
-    #       devSpacesBaseUrl: ${{ steps.ansible.output.devSpacesBaseUrl }}
-
-    # - id: publish
-    #   name: Publish
-    #   action: publish:github
-    #   input:
-    #     allowedHosts:
-    #       - ${{ parameters.sourceControl }}
-    #     description: ${{ parameters.description }}
-    #     repoUrl: ${{ steps.ansible.output.repoUrl }}
-    #     repoVisibility: 'public'
-    #     defaultBranch: main
-
-    #- id: register
-    #  name: Register
-    #  action: catalog:register
-    #  input:
-    #    repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
-    #    catalogInfoPath: '/catalog-info.yaml'
-
-  # output:
-  #   links:
-  #     - title: Repository
-  #       url: ${{ steps.publish.output.remoteUrl }}
-
-      #- title: Open in catalog
-      #  icon: catalog
-      #  entityRef: ${{ steps.register.output.entityRef }}
