@@ -29,6 +29,17 @@ spec:
           ui:backstage:
             review:
               show: false
+        sourceControl:
+          title: Select source control option
+          type: string
+          description: Select the source control option for your Ansible project.
+          default: github.com
+          enum:
+            - github.com
+            - gitlab.com
+          enumNames:
+            - 'GitHub'
+            - 'Gitlab'
         organization:
           title: Organization
           description: Select organization
@@ -130,6 +141,7 @@ spec:
          values:
             projectName: 'RH AAP Demo Seed Job Template Project'
             projectDescription: 'RH AAP Demo Seed Job Template Project'
+            sourceControl: ${{ parameters.sourceControl }}
             organization: ${{ parameters.organization }}
             scmUrl: ${{ parameters.scmUrl }}
             scmBranch: ${{ parameters.scmBranch }}
@@ -141,6 +153,7 @@ spec:
          token: ${{ parameters.token }}
          deleteIfExist: true
          values:
+           sourceControl: ${{ parameters.sourceControl }}
            environmentName: 'RH AAP Demo Seed Job Template execution environment'
            organization: ${{ parameters.organization }}
            image: 'quay.io/portal_mvp_patterns/ansible-pattern-loader:latest'
@@ -155,6 +168,7 @@ spec:
            templateName: 'RH AAP Demo Seed Job Template'
            templateDescription: 'RH AAP Demo Seed Job Template'
            project: ${{steps['create-project'].output.project }}
+           sourceControl: ${{ parameters.sourceControl }}
            organization: ${{ parameters.organization }}
            jobInventory: ${{ parameters.jobInventory }}
            playbook: ${{ parameters.playbook }}
@@ -172,6 +186,7 @@ spec:
        input:
          token: ${{ parameters.token }}
          values:
+           sourceControl: ${{ parameters.sourceControl }}
            template: ${{steps['create-template'].output.template}}
      - id: clean-up
        name: Clean up
@@ -180,6 +195,7 @@ spec:
          token: ${{ parameters.token }}
          values:
            project: ${{steps['create-project'].output.project }}
+           sourceControl: ${{ parameters.sourceControl }}
            executionEnvironment: ${{steps['create-ee'].output.executionEnvironment }}
            template: ${{steps['create-template'].output.template }}
      - id: create-showcase
@@ -189,6 +205,7 @@ spec:
          token: ${{ parameters.token }}
          values:
            organization: ${{ parameters.organization }}
+           sourceControl: ${{ parameters.sourceControl }}
            useCases: ${{ parameters.useCases }}
   output:
     text:
