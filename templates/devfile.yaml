@@ -38,7 +38,7 @@ spec:
           maxLength: 350
   steps:
     - id: ansible
-      name: Generating the Ansible Source Code Component
+      name: Creating the Ansible devfile
       action: ansible:content:create
       input:
         repositoryUrl: '${{ parameters.repositoryUrl }}'
