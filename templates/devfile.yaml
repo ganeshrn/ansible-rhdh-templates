@@ -24,8 +24,10 @@ spec:
           default: github.com
           enum:
             - github.com
+            - gitlab.com
           enumNames:
             - 'GitHub'
+            - 'GitLab'
         repositoryUrl:
           title: Source code repository URL
           type: string
