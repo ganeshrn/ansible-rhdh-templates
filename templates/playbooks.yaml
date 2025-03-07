@@ -31,7 +31,7 @@ spec:
             - gitlab.com
           enumNames:
             - 'GitHub'
-            - 'Gitlab'
+            - 'GitLab'
         repoOwner:
           title: Source code repository organization name or username
           type: string
