@@ -47,3 +47,8 @@ spec:
         description: '${{ parameters.description }}'
         applicationType: devfile-project
         sourceControl: '${{ parameters.sourceControl }}'
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.ansible.output.prUrl}}
