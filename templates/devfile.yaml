@@ -45,7 +45,7 @@ spec:
       input:
         repositoryUrl: '${{ parameters.repositoryUrl }}'
         description: '${{ parameters.description }}'
-        applicationType: devfile-project
+        applicationType: devfile
         sourceControl: '${{ parameters.sourceControl }}'
 
   output:
