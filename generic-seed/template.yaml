@@ -124,7 +124,7 @@ spec:
           resource: aaphostname
           ui:field: AAPResourcePicker
           default:
-            id: 0
+            id: 1
             name: Default
       errorMessage:
         properties:
