@@ -29,17 +29,14 @@ spec:
           ui:backstage:
             review:
               show: false
-        sourceControl:
+        scmType:
           title: Select source control option
           type: string
           description: Select the source control option for your Ansible project.
-          default: github.com
+          default: Github
           enum:
-            - github.com
-            - gitlab.com
-          enumNames:
-            - 'GitHub'
-            - 'Gitlab'
+            - Github
+            - Gitlab
         organization:
           title: Organization
           description: Select organization
@@ -200,7 +197,7 @@ spec:
          token: ${{ parameters.token }}
          values:
            organization: ${{ parameters.organization }}
-           sourceControl: ${{ parameters.sourceControl }}
+           scmType: ${{ parameters.scmType }}
            useCases: ${{ parameters.useCases }}
   output:
     text:
