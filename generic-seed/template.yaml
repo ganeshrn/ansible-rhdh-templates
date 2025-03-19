@@ -173,7 +173,7 @@ spec:
              aap_validate_certs: ${{ parameters.aapValidateCerts }}
              usecases: ${{ parameters.useCases }}
              seed_usecase: ${{ parameters.useCases | useCaseNameFilter }}
-             organization_name: ${{ parameters.organization | resourceFilter('name')}}
+             organization: ${{ parameters.organization | resourceFilter('name')}}
      - id: launch-job
        name: Launch job template
        action: rhaap:launch-job-template
