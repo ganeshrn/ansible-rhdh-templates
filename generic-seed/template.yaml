@@ -44,7 +44,7 @@ spec:
           ui:field: AAPResourcePicker
           default:
             id: 1
-            name: Default
+            name: ganeshrn-org-1
         jobInventory:
           title: Inventory
           description: Select inventory
