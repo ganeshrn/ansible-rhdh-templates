@@ -85,7 +85,7 @@ spec:
       name: Create AAP project
       action: rhaap:create-project
       input:
-        token: ${{ parameters.AAP_TOKEN }}
+        token: ${{ secrets.aapToken }}
         deleteIfExist: true
         values:
           projectName: ${{ parameters.projectName }}
@@ -101,7 +101,7 @@ spec:
       name: Create Execution Environment
       action: rhaap:create-execution-environment
       input:
-        token: ${{ parameters.AAP_TOKEN }}
+        token: ${{ secrets.aapToken }}
         values:
           environmentName: ${{ parameters.projectName }}-ee
           organization: ${{ parameters.organization }}
@@ -113,7 +113,7 @@ spec:
       name: Create Job Template
       action: rhaap:create-job-template
       input:
-        token: ${{ parameters.AAP_TOKEN }}
+        token: ${{ secrets.aapToken }}
         values:
           templateName: ${{ parameters.projectName }}-deploy
           templateDescription: Deployment job template
@@ -128,7 +128,7 @@ spec:
       name: Launch Job
       action: rhaap:launch-job-template
       input:
-        token: ${{ parameters.AAP_TOKEN }}
+        token: ${{ secrets.aapToken }}
         values:
           template: ${{ parameters.projectName }}-deploy
           inventory: ${{ parameters.jobInventory }}
